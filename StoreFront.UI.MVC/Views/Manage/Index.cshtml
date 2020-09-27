@@ -1,0 +1,19 @@
+﻿@model StoreFront.UI.MVC.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage your account";
+}
+
+<hr />
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "btn btn-outline-warning" })
+                                    : Html.ActionLink("Pick a password", "SetPassword", null, new { @class = "btn btn-outline-warning" }))
+            </p>
+        </div>
+    </div>
+</div>

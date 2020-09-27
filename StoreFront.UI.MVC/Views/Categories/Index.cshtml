@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SF.DATA.EF.Category>
+
+@{
+    ViewBag.Title = "Individual Product Catagories";
+}
+
+@section styles {
+    <link href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+<hr />
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        @Html.ActionLink("Create New Catagory", "Create", null, new { @class = "btn btn-outline-warning" })
+    </p>
+    <table class="table table-hover table-borderless">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CatDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MainCategory.MainCategoryName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CatDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MainCategory.MainCategoryName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CategoryID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts {
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "order": [[ 0, "asc" ]]
+            });
+        });
+    </script>
+}

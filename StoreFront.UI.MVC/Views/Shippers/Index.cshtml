@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SF.DATA.EF.Shipper>
+
+@{
+    ViewBag.Title = "Shippers";
+}
+
+@section styles {
+    <link href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+<hr />
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-warning" })
+    </p>
+    <table class="table table-hover table-borderless">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ShipperID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ShipperID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ShipperID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts {
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "order": [[0, "asc"]]
+            });
+        });
+    </script>
+}

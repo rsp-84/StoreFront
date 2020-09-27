@@ -1,0 +1,56 @@
+﻿@model SF.DATA.EF.Product
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<div class="page-holder bg-light">
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <!-- PRODUCT SLIDER-->
+                    <div class="row m-sm-0">
+                        <div class="col-sm-10 order-1 order-sm-2">
+                            <img class="img-fluid" src="~/content/img/@Model.ImageUrl" alt="@Model.ProductName">
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT DETAILS-->
+                <div class="col-lg-6">
+                    <h1>@Model.ProductName</h1>
+                    <p class="text-muted lead">@Model.UnitPrice.ToString("c")</p>
+                    <span class="text-danger">@ViewBag.PleaseAddMoreThan0</span>
+                    <span class="txt-danger">@ViewBag.QtyTooLarge</span>
+                    <div class="row align-items-stretch mb-4">
+                        <div class="col-sm-7 pr-sm-0">
+                            <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
+                                <span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+                                @using (Html.BeginForm("AddToCart", "Shop", new { productID = Model.ProductID }, FormMethod.Post, new { @class = "d-flex" }))
+                                {
+                                    @Html.TextBox("Qty", 1, new { @class = "form-control d-flex text-center", style = "max-width: 50px;" })
+                                    <input type="submit" value="Add To Cart" class="btn btn-dark  btn-block h-100 align-items-center justify-content-center d-flex" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled small d-inline-block">
+                        <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Back To:</strong><a class="reset-anchor ml-2" href="javascript:history.back()">@Model.Category.CategoryName</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- DETAILS TABS-->
+            <ul class="nav nav-tabs border-0">
+                <li class="nav-item"><span class="nav-link active">Description</span></li>
+            </ul>
+            <div class="tab-content mb-5">
+                <div class="tab-pane fade show active">
+                    <div class="p-4 p-lg-5 bg-white">
+                        <h6 class="text-uppercase">Product description</h6>
+                        <p class="text-muted text-small mb-0">@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

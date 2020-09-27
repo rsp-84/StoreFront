@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreFront.UI.MVC", "StoreFront.UI.MVC\StoreFront.UI.MVC.csproj", "{CA72E5E5-C272-4D79-B0AB-C632758292BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.DATA.EF", "SF.DATA.EF\SF.DATA.EF.csproj", "{DE14F14A-8EA0-455B-830C-486D10662E2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA72E5E5-C272-4D79-B0AB-C632758292BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA72E5E5-C272-4D79-B0AB-C632758292BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA72E5E5-C272-4D79-B0AB-C632758292BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA72E5E5-C272-4D79-B0AB-C632758292BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE14F14A-8EA0-455B-830C-486D10662E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE14F14A-8EA0-455B-830C-486D10662E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE14F14A-8EA0-455B-830C-486D10662E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE14F14A-8EA0-455B-830C-486D10662E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E5697FC-2DEB-4B80-AE08-62FBEC680246}
+	EndGlobalSection
+EndGlobal

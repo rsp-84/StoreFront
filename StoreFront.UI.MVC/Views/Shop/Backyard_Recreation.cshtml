@@ -1,0 +1,11 @@
+﻿@model PagedList.IPagedList<StoreFront.UI.MVC.Models.ShopViewModel>
+
+@{
+    ViewBag.Title = "Backyard Recreation";
+}
+
+@section styles {
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+}
+
+@Html.Partial("_ShopPartial", Model)

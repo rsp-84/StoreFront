@@ -1,0 +1,36 @@
+﻿@model SF.DATA.EF.Shipper
+
+@{
+    ViewBag.Title = "Shipper Details";
+}
+
+<hr />
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <div>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ShipperID }, new { @class = "btn btn-outline-warning mb-5" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-warning mb-5" })
+    </p>
+</div>

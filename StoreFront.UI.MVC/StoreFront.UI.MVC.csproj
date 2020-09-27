@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA72E5E5-C272-4D79-B0AB-C632758292BB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StoreFront.UI.MVC</RootNamespace>
+    <AssemblyName>StoreFront.UI.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcSiteMapProvider, Version=4.6.26.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.26\lib\net45\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainCategoriesController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ShippersController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\SuppliersController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
+    <Compile Include="Models\ShopViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\ImageService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\style.blue.css" />
+    <Content Include="Content\css\style.blue.min.css" />
+    <Content Include="Content\css\style.default.css" />
+    <Content Include="Content\css\style.default.min.css" />
+    <Content Include="Content\css\style.gold.css" />
+    <Content Include="Content\css\style.gold.min.css" />
+    <Content Include="Content\css\style.green.css" />
+    <Content Include="Content\css\style.green.min.css" />
+    <Content Include="Content\css\style.pink.css" />
+    <Content Include="Content\css\style.pink.min.css" />
+    <Content Include="Content\css\style.red.css" />
+    <Content Include="Content\css\style.red.min.css" />
+    <Content Include="Content\css\style.sea.css" />
+    <Content Include="Content\css\style.sea.min.css" />
+    <Content Include="Content\css\style.violet.css" />
+    <Content Include="Content\css\style.violet.min.css" />
+    <Content Include="Content\icons\demo.html" />
+    <Content Include="Content\icons\orion-svg-sprite.svg" />
+    <Content Include="Content\icons\styles.css" />
+    <Content Include="Content\img\06b3fe7d-a206-45a6-9858-39bc70e3ed7a.jpg" />
+    <Content Include="Content\img\17705d56-931b-4df1-9cde-7e16c0073166.jpg" />
+    <Content Include="Content\img\1d9a7eeb-0ccf-423b-bd92-26093070efe8.jpg" />
+    <Content Include="Content\img\2454df71-3712-492a-b9d9-9de09c4b5507.jpg" />
+    <Content Include="Content\img\25529b5b-de41-4db5-ab36-868ef4435340.jpg" />
+    <Content Include="Content\img\36623a51-ce3d-4a66-844e-140f9b5ef0d1.jpg" />
+    <Content Include="Content\img\375f84d8-abd4-4bb2-bef5-09ec13c4d141.jpg" />
+    <Content Include="Content\img\3944ce99-4efa-489a-97cc-6c002af58bf9.jpg" />
+    <Content Include="Content\img\3ad805ee-5f33-44d7-9991-887021c59dc5.jpg" />
+    <Content Include="Content\img\4b26cbeb-a879-4018-97ea-4dc59a2c6a1f.jpg" />
+    <Content Include="Content\img\4bcad0ee-4a93-4391-815a-deb5e80b2862.jpg" />
+    <Content Include="Content\img\53f432f6-5d82-4ac2-b389-5e27cef1e9ed.jpg" />
+    <Content Include="Content\img\556680de-447d-45bb-81cf-256fbd1e85e9.jpg" />
+    <Content Include="Content\img\57a998fc-de90-40aa-aed6-c49ce9d9d04b.jpg" />
+    <Content Include="Content\img\63d3dfd9-0d06-47e5-a80d-49908f719d19.jpg" />
+    <Content Include="Content\img\65674133-60ad-450e-b69f-e9691d0f3a93.jpg" />
+    <Content Include="Content\img\687e2e0b-7165-4751-9e95-c390e84b63ec.jpg" />
+    <Content Include="Content\img\7b04e158-4b9d-411f-a8fd-bb5a52fda8c8.jpg" />
+    <Content Include="Content\img\7ff67968-a99e-4fd5-9406-af7aa03dc49b.jpg" />
+    <Content Include="Content\img\8e91d971-bc29-4ed7-8b68-96589fada3f2.jpg" />
+    <Content Include="Content\img\917264fb-d621-46bf-866e-a8723a8bcf8e.jpg" />
+    <Content Include="Content\img\942ba20c-37ce-4133-aa3e-d1cf69082a23.jpg" />
+    <Content Include="Content\img\9a48e6f9-9e17-4fbd-b128-f46c66ade2ee.jpg" />
+    <Content Include="Content\img\9ce8a549-ef72-4af0-87cf-ce001c8cb752.jpg" />
+    <Content Include="Content\img\9d70a0f4-67ae-492f-a75e-dcbd040f92cd.jpg" />
+    <Content Include="Content\img\9e1dfe13-da8a-4d91-aa71-fa6ab5519315.jpg" />
+    <Content Include="Content\img\a5f421bf-888d-488d-a096-982c23b90709.jpg" />
+    <Content Include="Content\img\b77c7cf2-472b-4cdd-8e14-f514ca5ff769.jpg" />
+    <Content Include="Content\img\c146b3f0-1cd4-4b19-a764-ef2620f545a2.jpg" />
+    <Content Include="Content\img\ca7ebab2-9c90-45ae-9cfd-a7a56d23920f.jpg" />
+    <Content Include="Content\img\cat-img-1.jpg" />
+    <Content Include="Content\img\cat-img-2.jpg" />
+    <Content Include="Content\img\cat-img-3.jpg" />
+    <Content Include="Content\img\cat-img-4.jpg" />
+    <Content Include="Content\img\category-1.jpg" />
+    <Content Include="Content\img\category-2.jpg" />
+    <Content Include="Content\img\cdaf9a0f-efaa-4527-8263-d5ad8b0c8020.jpg" />
+    <Content Include="Content\img\cf5e1988-3813-4236-8f66-45174eafc34a.jpg" />
+    <Content Include="Content\img\customer-1.png" />
+    <Content Include="Content\img\customer-2.png" />
+    <Content Include="Content\img\d294a30d-eb28-412d-8c5e-100aac6dadad.jpg" />
+    <Content Include="Content\img\d7ac9192-2a35-4bf3-9821-dd15492cee58.jpg" />
+    <Content Include="Content\img\d81152a5-4b68-4bc7-bb44-15a76aeeccb8.jpg" />
+    <Content Include="Content\img\d879273d-2afa-4a95-9a44-637adc784f87.jpg" />
+    <Content Include="Content\img\d8fa6709-9549-4fa1-9fdc-5526461606c2.jpg" />
+    <Content Include="Content\img\db3ee61a-7496-4365-a0fe-e587728bbd1b.jpg" />
+    <Content Include="Content\img\e33ab994-2147-4478-8183-5988737b4a4a.jpg" />
+    <Content Include="Content\img\e8000ef8-ece0-42e0-b0af-93ee83fd06b8.jpg" />
+    <Content Include="Content\img\f9b5ae2a-c7e8-45ee-936a-5282d5586694.jpg" />
+    <Content Include="Content\img\hero-banner-alt.jpg" />
+    <Content Include="Content\img\hero-banner.jpg" />
+    <Content Include="Content\img\hero-shop.jpg" />
+    <Content Include="Content\img\heroImage.jpg" />
+    <Content Include="Content\img\lightblue_t_shirt.jpg" />
+    <Content Include="Content\img\noImage.png" />
+    <Content Include="Content\img\product-1.jpg" />
+    <Content Include="Content\img\product-10.jpg" />
+    <Content Include="Content\img\product-11.jpg" />
+    <Content Include="Content\img\product-12.jpg" />
+    <Content Include="Content\img\product-2.jpg" />
+    <Content Include="Content\img\product-3.jpg" />
+    <Content Include="Content\img\product-4.jpg" />
+    <Content Include="Content\img\product-5-alt-1.jpg" />
+    <Content Include="Content\img\product-5-alt-2.jpg" />
+    <Content Include="Content\img\product-5.jpg" />
+    <Content Include="Content\img\product-6.jpg" />
+    <Content Include="Content\img\product-7.jpg" />
+    <Content Include="Content\img\product-8.jpg" />
+    <Content Include="Content\img\product-9.jpg" />
+    <Content Include="Content\img\product-detail-1.jpg" />
+    <Content Include="Content\img\product-detail-2.jpg" />
+    <Content Include="Content\img\product-detail-3.jpg" />
+    <Content Include="Content\img\product-detail-4.jpg" />
+    <Content Include="Content\img\red_t_shirt.jpg" />
+    <Content Include="Content\img\SFicon.png" />
+    <Content Include="Content\img\template-mac.png" />
+    <Content Include="Content\img\tent.jpg" />
+    <Content Include="Content\img\trampoline.jpg" />
+    <Content Include="Content\img\t_06b3fe7d-a206-45a6-9858-39bc70e3ed7a.jpg" />
+    <Content Include="Content\img\t_17705d56-931b-4df1-9cde-7e16c0073166.jpg" />
+    <Content Include="Content\img\t_1d9a7eeb-0ccf-423b-bd92-26093070efe8.jpg" />
+    <Content Include="Content\img\t_2454df71-3712-492a-b9d9-9de09c4b5507.jpg" />
+    <Content Include="Content\img\t_25529b5b-de41-4db5-ab36-868ef4435340.jpg" />
+    <Content Include="Content\img\t_36623a51-ce3d-4a66-844e-140f9b5ef0d1.jpg" />
+    <Content Include="Content\img\t_375f84d8-abd4-4bb2-bef5-09ec13c4d141.jpg" />
+    <Content Include="Content\img\t_3944ce99-4efa-489a-97cc-6c002af58bf9.jpg" />
+    <Content Include="Content\img\t_3ad805ee-5f33-44d7-9991-887021c59dc5.jpg" />
+    <Content Include="Content\img\t_4b26cbeb-a879-4018-97ea-4dc59a2c6a1f.jpg" />
+    <Content Include="Content\img\t_4bcad0ee-4a93-4391-815a-deb5e80b2862.jpg" />
+    <Content Include="Content\img\t_53f432f6-5d82-4ac2-b389-5e27cef1e9ed.jpg" />
+    <Content Include="Content\img\t_556680de-447d-45bb-81cf-256fbd1e85e9.jpg" />
+    <Content Include="Content\img\t_57a998fc-de90-40aa-aed6-c49ce9d9d04b.jpg" />
+    <Content Include="Content\img\t_63d3dfd9-0d06-47e5-a80d-49908f719d19.jpg" />
+    <Content Include="Content\img\t_65674133-60ad-450e-b69f-e9691d0f3a93.jpg" />
+    <Content Include="Content\img\t_687e2e0b-7165-4751-9e95-c390e84b63ec.jpg" />
+    <Content Include="Content\img\t_7b04e158-4b9d-411f-a8fd-bb5a52fda8c8.jpg" />
+    <Content Include="Content\img\t_7ff67968-a99e-4fd5-9406-af7aa03dc49b.jpg" />
+    <Content Include="Content\img\t_8e91d971-bc29-4ed7-8b68-96589fada3f2.jpg" />
+    <Content Include="Content\img\t_917264fb-d621-46bf-866e-a8723a8bcf8e.jpg" />
+    <Content Include="Content\img\t_942ba20c-37ce-4133-aa3e-d1cf69082a23.jpg" />
+    <Content Include="Content\img\t_9a48e6f9-9e17-4fbd-b128-f46c66ade2ee.jpg" />
+    <Content Include="Content\img\t_9ce8a549-ef72-4af0-87cf-ce001c8cb752.jpg" />
+    <Content Include="Content\img\t_9d70a0f4-67ae-492f-a75e-dcbd040f92cd.jpg" />
+    <Content Include="Content\img\t_9e1dfe13-da8a-4d91-aa71-fa6ab5519315.jpg" />
+    <Content Include="Content\img\t_a5f421bf-888d-488d-a096-982c23b90709.jpg" />
+    <Content Include="Content\img\t_b77c7cf2-472b-4cdd-8e14-f514ca5ff769.jpg" />
+    <Content Include="Content\img\t_c146b3f0-1cd4-4b19-a764-ef2620f545a2.jpg" />
+    <Content Include="Content\img\t_ca7ebab2-9c90-45ae-9cfd-a7a56d23920f.jpg" />
+    <Content Include="Content\img\t_cdaf9a0f-efaa-4527-8263-d5ad8b0c8020.jpg" />
+    <Content Include="Content\img\t_cf5e1988-3813-4236-8f66-45174eafc34a.jpg" />
+    <Content Include="Content\img\t_d294a30d-eb28-412d-8c5e-100aac6dadad.jpg" />
+    <Content Include="Content\img\t_d7ac9192-2a35-4bf3-9821-dd15492cee58.jpg" />
+    <Content Include="Content\img\t_d81152a5-4b68-4bc7-bb44-15a76aeeccb8.jpg" />
+    <Content Include="Content\img\t_d879273d-2afa-4a95-9a44-637adc784f87.jpg" />
+    <Content Include="Content\img\t_d8fa6709-9549-4fa1-9fdc-5526461606c2.jpg" />
+    <Content Include="Content\img\t_db3ee61a-7496-4365-a0fe-e587728bbd1b.jpg" />
+    <Content Include="Content\img\t_e33ab994-2147-4478-8183-5988737b4a4a.jpg" />
+    <Content Include="Content\img\t_e8000ef8-ece0-42e0-b0af-93ee83fd06b8.jpg" />
+    <Content Include="Content\img\t_f9b5ae2a-c7e8-45ee-936a-5282d5586694.jpg" />
+    <Content Include="Content\js\demo.js" />
+    <Content Include="Content\js\front.js" />
+    <Content Include="Content\js\selectedNavigation.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\vendor\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Content\vendor\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="Content\vendor\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-am_ET.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-am_ET.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-es_ES.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-es_ES.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-et_EE.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-et_EE.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-eu.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-hr_HR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ja_JP.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-kh_KM.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-lv_LV.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-vi_VN.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\vendor\bootstrap-select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\jquery.cookie\jquery.cookie.js" />
+    <Content Include="Content\vendor\jquery.cookie\MIT-LICENSE.txt" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.slim.js" />
+    <Content Include="Content\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Content\vendor\node-sass\lib\binding.js" />
+    <Content Include="Content\vendor\node-sass\lib\errors.js" />
+    <Content Include="Content\vendor\node-sass\lib\extensions.js" />
+    <Content Include="Content\vendor\node-sass\lib\index.js" />
+    <Content Include="Content\vendor\node-sass\lib\render.js" />
+    <Content Include="Content\vendor\node-sass\lib\watcher.js" />
+    <Content Include="Content\vendor\node-sass\node_modules\cross-spawn\index.js" />
+    <Content Include="Content\vendor\node-sass\node_modules\cross-spawn\lib\enoent.js" />
+    <Content Include="Content\vendor\node-sass\node_modules\cross-spawn\lib\parse.js" />
+    <Content Include="Content\vendor\node-sass\node_modules\cross-spawn\lib\resolveCommand.js" />
+    <Content Include="Content\vendor\node-sass\scripts\build.js" />
+    <Content Include="Content\vendor\node-sass\scripts\coverage.js" />
+    <Content Include="Content\vendor\node-sass\scripts\install.js" />
+    <Content Include="Content\vendor\node-sass\scripts\prepublish.js" />
+    <Content Include="Content\vendor\node-sass\scripts\util\downloadoptions.js" />
+    <Content Include="Content\vendor\node-sass\scripts\util\proxy.js" />
+    <Content Include="Content\vendor\node-sass\scripts\util\useragent.js" />
+    <Content Include="Content\vendor\nouislider\nouislider.css" />
+    <Content Include="Content\vendor\nouislider\nouislider.js" />
+    <Content Include="Content\vendor\nouislider\nouislider.min.css" />
+    <Content Include="Content\vendor\nouislider\nouislider.min.js" />
+    <Content Include="Content\vendor\owl.carousel2.thumbs\owl.carousel2.thumbs.js" />
+    <Content Include="Content\vendor\owl.carousel2.thumbs\owl.carousel2.thumbs.min.js" />
+    <Content Include="Content\vendor\owl.carousel2\assets\ajax-loader.gif" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.carousel.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.carousel.min.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.theme.default.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.theme.default.min.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.theme.green.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.theme.green.min.css" />
+    <Content Include="Content\vendor\owl.carousel2\assets\owl.video.play.png" />
+    <Content Include="Content\vendor\owl.carousel2\owl.carousel.js" />
+    <Content Include="Content\vendor\owl.carousel2\owl.carousel.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="_archive\cart.html" />
+    <Content Include="_archive\checkout.html" />
+    <Content Include="_archive\css\custom.css" />
+    <Content Include="_archive\css\style.blue.css" />
+    <Content Include="_archive\css\style.blue.min.css" />
+    <Content Include="_archive\css\style.default.css" />
+    <Content Include="_archive\css\style.default.min.css" />
+    <Content Include="_archive\css\style.gold.css" />
+    <Content Include="_archive\css\style.gold.min.css" />
+    <Content Include="_archive\css\style.green.css" />
+    <Content Include="_archive\css\style.green.min.css" />
+    <Content Include="_archive\css\style.pink.css" />
+    <Content Include="_archive\css\style.pink.min.css" />
+    <Content Include="_archive\css\style.red.css" />
+    <Content Include="_archive\css\style.red.min.css" />
+    <Content Include="_archive\css\style.sea.css" />
+    <Content Include="_archive\css\style.sea.min.css" />
+    <Content Include="_archive\css\style.violet.css" />
+    <Content Include="_archive\css\style.violet.min.css" />
+    <Content Include="_archive\detail.html" />
+    <Content Include="_archive\icons\demo.html" />
+    <Content Include="_archive\icons\orion-svg-sprite.svg" />
+    <Content Include="_archive\icons\styles.css" />
+    <Content Include="_archive\img\cat-img-1.jpg" />
+    <Content Include="_archive\img\cat-img-2.jpg" />
+    <Content Include="_archive\img\cat-img-3.jpg" />
+    <Content Include="_archive\img\cat-img-4.jpg" />
+    <Content Include="_archive\img\category-1.jpg" />
+    <Content Include="_archive\img\category-2.jpg" />
+    <Content Include="_archive\img\customer-1.png" />
+    <Content Include="_archive\img\customer-2.png" />
+    <Content Include="_archive\img\favicon.png" />
+    <Content Include="_archive\img\hero-banner-alt.jpg" />
+    <Content Include="_archive\img\hero-banner.jpg" />
+    <Content Include="_archive\img\hero-shop.jpg" />
+    <Content Include="_archive\img\product-1.jpg" />
+    <Content Include="_archive\img\product-10.jpg" />
+    <Content Include="_archive\img\product-11.jpg" />
+    <Content Include="_archive\img\product-12.jpg" />
+    <Content Include="_archive\img\product-2.jpg" />
+    <Content Include="_archive\img\product-3.jpg" />
+    <Content Include="_archive\img\product-4.jpg" />
+    <Content Include="_archive\img\product-5-alt-1.jpg" />
+    <Content Include="_archive\img\product-5-alt-2.jpg" />
+    <Content Include="_archive\img\product-5.jpg" />
+    <Content Include="_archive\img\product-6.jpg" />
+    <Content Include="_archive\img\product-7.jpg" />
+    <Content Include="_archive\img\product-8.jpg" />
+    <Content Include="_archive\img\product-9.jpg" />
+    <Content Include="_archive\img\product-detail-1.jpg" />
+    <Content Include="_archive\img\product-detail-2.jpg" />
+    <Content Include="_archive\img\product-detail-3.jpg" />
+    <Content Include="_archive\img\product-detail-4.jpg" />
+    <Content Include="_archive\img\template-mac.png" />
+    <Content Include="_archive\index.html" />
+    <Content Include="_archive\js\demo.js" />
+    <Content Include="_archive\js\front.js" />
+    <Content Include="_archive\shop.html" />
+    <Content Include="_archive\test.html" />
+    <Content Include="_archive\vendor\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="_archive\vendor\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="_archive\vendor\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-am_ET.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-am_ET.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-en_US.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-es_ES.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-es_ES.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-et_EE.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-et_EE.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-eu.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-hr_HR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-hr_HR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ja_JP.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ja_JP.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-kh_KM.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-kh_KM.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-lv_LV.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-lv_LV.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-vi_VN.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-vi_VN.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="_archive\vendor\bootstrap-select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="_archive\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="_archive\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="_archive\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="_archive\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="_archive\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="_archive\vendor\jquery.cookie\jquery.cookie.js" />
+    <Content Include="_archive\vendor\jquery.cookie\MIT-LICENSE.txt" />
+    <Content Include="_archive\vendor\jquery\jquery.js" />
+    <Content Include="_archive\vendor\jquery\jquery.min.js" />
+    <Content Include="_archive\vendor\jquery\jquery.slim.js" />
+    <Content Include="_archive\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="_archive\vendor\lightbox2\css\lightbox.css" />
+    <Content Include="_archive\vendor\lightbox2\css\lightbox.min.css" />
+    <Content Include="_archive\vendor\lightbox2\images\close.png" />
+    <Content Include="_archive\vendor\lightbox2\images\loading.gif" />
+    <Content Include="_archive\vendor\lightbox2\images\next.png" />
+    <Content Include="_archive\vendor\lightbox2\images\prev.png" />
+    <Content Include="_archive\vendor\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="_archive\vendor\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="_archive\vendor\lightbox2\js\lightbox.js" />
+    <Content Include="_archive\vendor\lightbox2\js\lightbox.min.js" />
+    <Content Include="_archive\vendor\node-sass\lib\binding.js" />
+    <Content Include="_archive\vendor\node-sass\lib\errors.js" />
+    <Content Include="_archive\vendor\node-sass\lib\extensions.js" />
+    <Content Include="_archive\vendor\node-sass\lib\index.js" />
+    <Content Include="_archive\vendor\node-sass\lib\render.js" />
+    <Content Include="_archive\vendor\node-sass\lib\watcher.js" />
+    <Content Include="_archive\vendor\node-sass\node_modules\cross-spawn\index.js" />
+    <Content Include="_archive\vendor\node-sass\node_modules\cross-spawn\lib\enoent.js" />
+    <Content Include="_archive\vendor\node-sass\node_modules\cross-spawn\lib\parse.js" />
+    <Content Include="_archive\vendor\node-sass\node_modules\cross-spawn\lib\resolveCommand.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\build.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\coverage.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\install.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\prepublish.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\util\downloadoptions.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\util\proxy.js" />
+    <Content Include="_archive\vendor\node-sass\scripts\util\useragent.js" />
+    <Content Include="_archive\vendor\nouislider\nouislider.css" />
+    <Content Include="_archive\vendor\nouislider\nouislider.js" />
+    <Content Include="_archive\vendor\nouislider\nouislider.min.css" />
+    <Content Include="_archive\vendor\nouislider\nouislider.min.js" />
+    <Content Include="_archive\vendor\owl.carousel2.thumbs\owl.carousel2.thumbs.js" />
+    <Content Include="_archive\vendor\owl.carousel2.thumbs\owl.carousel2.thumbs.min.js" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\ajax-loader.gif" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.carousel.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.carousel.min.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.theme.default.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.theme.default.min.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.theme.green.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.theme.green.min.css" />
+    <Content Include="_archive\vendor\owl.carousel2\assets\owl.video.play.png" />
+    <Content Include="_archive\vendor\owl.carousel2\owl.carousel.js" />
+    <Content Include="_archive\vendor\owl.carousel2\owl.carousel.min.js" />
+    <Content Include="Content\css\style.blue.min.css.map" />
+    <Content Include="Content\css\style.default.min.css.map" />
+    <Content Include="Content\css\style.gold.min.css.map" />
+    <Content Include="Content\css\style.green.min.css.map" />
+    <Content Include="Content\css\style.pink.min.css.map" />
+    <Content Include="Content\css\style.red.min.css.map" />
+    <Content Include="Content\css\style.sea.min.css.map" />
+    <Content Include="Content\css\style.violet.min.css.map" />
+    <Content Include="Content\vendor\jquery.cookie\component.json" />
+    <Content Include="Content\vendor\jquery.cookie\cookie.jquery.json" />
+    <Content Include="Content\vendor\node-sass\bin\emcc" />
+    <Content Include="Content\vendor\node-sass\bin\node-sass" />
+    <Content Include="Content\vendor\node-sass\binding.gyp" />
+    <Content Include="Content\vendor\node-sass\vendor\linux-x64-64\binding.node" />
+    <Content Include="Content\vendor\nouislider\CHANGELOG.MD" />
+    <Content Include="Mvc.sitemap" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\OriginalLayout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="_archive\css\style.blue.min.css.map" />
+    <Content Include="_archive\css\style.default.min.css.map" />
+    <Content Include="_archive\css\style.gold.min.css.map" />
+    <Content Include="_archive\css\style.green.min.css.map" />
+    <Content Include="_archive\css\style.pink.min.css.map" />
+    <Content Include="_archive\css\style.red.min.css.map" />
+    <Content Include="_archive\css\style.sea.min.css.map" />
+    <Content Include="_archive\css\style.violet.min.css.map" />
+    <Content Include="_archive\js\countries.json" />
+    <Content Include="_archive\vendor\jquery.cookie\component.json" />
+    <Content Include="_archive\vendor\jquery.cookie\cookie.jquery.json" />
+    <Content Include="_archive\vendor\node-sass\binding.gyp" />
+    <Content Include="_archive\vendor\node-sass\bin\emcc" />
+    <Content Include="_archive\vendor\node-sass\bin\node-sass" />
+    <Content Include="_archive\vendor\node-sass\vendor\linux-x64-64\binding.node" />
+    <Content Include="_archive\vendor\nouislider\CHANGELOG.MD" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\MainCategories\Create.cshtml" />
+    <Content Include="Views\MainCategories\Delete.cshtml" />
+    <Content Include="Views\MainCategories\Details.cshtml" />
+    <Content Include="Views\MainCategories\Edit.cshtml" />
+    <Content Include="Views\MainCategories\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Shippers\Create.cshtml" />
+    <Content Include="Views\Shippers\Delete.cshtml" />
+    <Content Include="Views\Shippers\Details.cshtml" />
+    <Content Include="Views\Shippers\Edit.cshtml" />
+    <Content Include="Views\Shippers\Index.cshtml" />
+    <Content Include="Views\Suppliers\Create.cshtml" />
+    <Content Include="Views\Suppliers\Delete.cshtml" />
+    <Content Include="Views\Suppliers\Details.cshtml" />
+    <Content Include="Views\Suppliers\Edit.cshtml" />
+    <Content Include="Views\Suppliers\Index.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\Womens_Clothing.cshtml" />
+    <Content Include="Views\Shared\_ShopPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Shop\Mens_Clothing.cshtml" />
+    <Content Include="Views\Shop\Boys_Clothing.cshtml" />
+    <Content Include="Views\Shop\Girls_Clothing.cshtml" />
+    <Content Include="Views\Shop\Camping.cshtml" />
+    <Content Include="Views\Shop\Fishing.cshtml" />
+    <Content Include="Views\Shop\Outdoor_Cooking.cshtml" />
+    <Content Include="Views\Shop\Backyard_Recreation.cshtml" />
+    <Content Include="Views\Shop\Detail.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\vendor\jquery.cookie\test\" />
+    <Folder Include="Content\vendor\node-sass\src\" />
+    <Folder Include="Content\vendor\node-sass\test\" />
+    <Folder Include="Content\vendor\nouislider\distribute\" />
+    <Folder Include="_archive\vendor\jquery.cookie\test\" />
+    <Folder Include="_archive\vendor\node-sass\src\" />
+    <Folder Include="_archive\vendor\node-sass\test\" />
+    <Folder Include="_archive\vendor\nouislider\distribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SF.DATA.EF\SF.DATA.EF.csproj">
+      <Project>{de14f14a-8ea0-455b-830c-486d10662e2d}</Project>
+      <Name>SF.DATA.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50469</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50469/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

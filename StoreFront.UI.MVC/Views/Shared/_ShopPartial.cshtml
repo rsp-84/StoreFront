@@ -1,0 +1,120 @@
+﻿@model PagedList.IPagedList<StoreFront.UI.MVC.Models.ShopViewModel>
+@using PagedList.Mvc;
+
+<!-- HERO SECTION-->
+<div class="page-holder">
+    <div class="container">
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="h2 text-uppercase mb-0">Shop</h1>
+                    </div>
+                    <div class="col-lg-6 text-lg-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-lg-end mb-0 px-0">
+                                <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                                @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                                {
+                                    @:<li class="breadcrumb-item @(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "") ">
+                                        @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                                    @:</li>
+                                }
+                                @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                                {
+                                    @:<li class="breadcrumb-item active">
+                                        @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString().Replace('_', ' '), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                                    @:</li>
+                                }
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container p-0">
+                <div class="row">
+                    <!-- SHOP SIDEBAR-->
+                    <div class="col-lg-3 order-2 order-lg-1">
+                        <h5 class="text-uppercase mb-4">Categories</h5>
+                        @foreach (var mainCategory in ViewBag.MainCategories)
+                        {
+                            <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">@mainCategory.MainCategoryName</strong></div>
+
+                            foreach (var Category in ViewBag.Categories)
+                            {
+                                if (mainCategory.MainCategoryID == Category.MainCategoryID)
+                                {
+                                    <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
+                                        <li class="mb-2"><a class="reset-anchor" href="@Url.Action(Category.CategoryName.Replace(" ", "_").Replace("'", ""))">@Category.CategoryName</a></li>
+                                    </ul>
+                                }
+                            }
+                        }
+                    </div>
+                    <!-- SHOP LISTING-->
+                    <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-lg-6 mb-2 mb-lg-0">
+                                <span class="text-small text-muted mb-0">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-inline d-flex align-items-center justify-content-lg-end mb-0">
+                                    <li class="list-inline-item">
+                                        @using (Html.BeginForm(null, "Shop", FormMethod.Get))
+                                        {
+                                            <span>
+                                                @Html.TextBox("searchString", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Find By Product Name" })
+                                                <input type="submit" value="Search" style="display: none;" />
+                                            </span>
+                                        }
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <select class="selectpicker ml-auto" onchange="javascript:location.href = '?sort=' + this.value + '&' + window.location.search.substr(1);">
+                                            <option selected>Sort by:</option>
+                                            <option value="low-high">Price: Low to High</option>
+                                            <option value="high-low">Price: High to Low</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h1>@ViewBag.Title</h1>
+                        <div class="row">
+                            <!-- PRODUCT-->
+                            @foreach (var product in Model)
+                            {
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="product text-center">
+                                        <div class="mb-3 position-relative">
+                                            <div class="badge text-white badge-"></div><a class="d-block" href="@Url.Action("Detail", "Shop", new { id = product.ProductID })"><img class="img-fluid w-100" src="~/content/img/t_@product.ImageUrl" alt="@product.ProductName"></a>
+                                            <div class="product-overlay">
+                                                <ul class="mb-0 list-inline">
+                                                    <li class="list-inline-item m-0 p-0">
+                                                        @using (Html.BeginForm("AddToCart", "Shop", new { productID = product.ProductID }, FormMethod.Post, new { @class = "d-flex" }))
+                                                        {
+                                                            @Html.TextBox("Qty", 1, new { @class = "form-control d-flex text-center", id = "", style = "max-width: 50px;" })
+                                                            <input type="submit" value="Add To Cart" class="btn btn-dark  btn-block h-100 align-items-center justify-content-center d-flex" />
+                                                        }
+                                                    </li>
+                                                    <li class="list-inline-item mr-0">
+                                                        <a class="d-flex btn btn-sm btn-outline-dark" href="@Url.Action("Detail", "Shop", new { id = product.ProductID })"><i class="fas fa-expand"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h6> <a class="reset-anchor" href="detail.html">@product.ProductName</a></h6>
+                                        <p class="small text-muted">@product.UnitPrice.ToString("c")</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- PAGINATION-->
+                        @Html.PagedListPager(Model, page => Url.Action(null, new { page, sort = Request.QueryString["sort"], currentFilter = ViewBag.CurrentFilter }))
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
