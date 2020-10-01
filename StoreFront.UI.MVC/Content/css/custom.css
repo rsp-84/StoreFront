@@ -16,3 +16,9 @@
 .btn-outline-warning:focus {
     background: #dcb14a;
 }
+
+@media only screen and (max-width: 775px) {
+    .cart__list--hide-sm {
+        display: none !important
+    }
+}
